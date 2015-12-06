@@ -1581,7 +1581,7 @@ where &#13;
                     <description>Обнаружение всех jobs в БД Oracle</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Время выполнения JOB'a {#JOBOWNER}.{#JOBNAME}</name>
+                            <name>JOB runtime on {#JOBOWNER}.{#JOBNAME}</name>
                             <type>11</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1593,7 +1593,7 @@ where &#13;
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
-                            <units>мин</units>
+                            <units>min</units>
                             <delta>0</delta>
                             <snmpv3_contextname/>
                             <snmpv3_securityname/>
@@ -1637,7 +1637,7 @@ FROM (SELECT owner,&#13;
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Статус выполнения JOB'а {#JOBOWNER}.{#JOBNAME}</name>
+                            <name>Job execution status on {#JOBOWNER}.{#JOBNAME}</name>
                             <type>11</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1696,7 +1696,7 @@ WHERE &#13;
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Application Oracle ODBC:db.odbc.select[job_runtime_{#JOBOWNER}.{#JOBNAME},{$DSN1}].last()}&gt;720</expression>
-                            <name>Время выполнения job'а {#JOBNAME} более 720 мин</name>
+                            <name>Job {#JOBNAME} running lasts more than 720 minutes</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -1705,7 +1705,7 @@ WHERE &#13;
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Application Oracle ODBC:db.odbc.select[job_status_{#JOBOWNER}.{#JOBNAME},{$DSN1}].str(&quot;SUCCEEDED&quot;)}#1</expression>
-                            <name>Ошибка выполнения job'а {#JOBNAME}</name>
+                            <name>Job runtime error on {#JOBNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -1743,10 +1743,10 @@ WHERE &#13;
                     <port/>
                     <filter>{#TBSNAME}:@Oracle System Excluded Tablespaces</filter>
                     <lifetime>30</lifetime>
-                    <description>Обнаружение всех tablespaces в БД Oracle</description>
+                    <description>Detection of all tablespaces in the Oracle DB</description>
                     <item_prototypes>
                         <item_prototype>
-                            <name>Использовано места в процентах в tablespace {#TBSNAME}</name>
+                            <name>Used tablespace space % on {#TBSNAME}</name>
                             <type>11</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1790,7 +1790,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Использовано % в tablespace</description>
+                            <description>Used in tablespace %</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -1803,7 +1803,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Максимально возможный размер tablespace {#TBSNAME}</name>
+                            <name>Max possible tablespace size on {#TBSNAME}</name>
                             <type>11</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1846,7 +1846,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Максимально возможный размер tablespace</description>
+                            <description>Maximum possible size of the tablespace</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -1859,7 +1859,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Осталось свободного места в байтах в tablespace {#TBSNAME}</name>
+                            <name>Free tablespace on {#TBSNAME}</name>
                             <type>11</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1902,7 +1902,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Использовано в байтах в tablespace</description>
+                            <description>Used in bytes in tablespace</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -1915,7 +1915,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Свободно в tablespace {#TBSNAME}</name>
+                            <name>Available tablespace {#TBSNAME}</name>
                             <type>11</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -1958,7 +1958,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Свободно в tablespace</description>
+                            <description>Free in tablespace</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -1971,7 +1971,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <valuemap/>
                         </item_prototype>
                         <item_prototype>
-                            <name>Текущий размер tablespace {#TBSNAME}</name>
+                            <name>Current tablespace size on {#TBSNAME}</name>
                             <type>11</type>
                             <snmp_community/>
                             <multiplier>0</multiplier>
@@ -2014,7 +2014,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                             <publickey/>
                             <privatekey/>
                             <port/>
-                            <description>Актуальный размер tablespace</description>
+                            <description>Actual size of the tablespace</description>
                             <inventory_link>0</inventory_link>
                             <applications>
                                 <application>
@@ -2030,7 +2030,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                     <trigger_prototypes>
                         <trigger_prototype>
                             <expression>{Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&lt;3298534883328 &amp; {Application Oracle ODBC:db.odbc.select[tbs_used_percent_{#TBSNAME},{$DSN1}].last()}&gt;97 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0</expression>
-                            <name>Свободное пространство в tablespace {#TBSNAME} менее 3%</name>
+                            <name>Free space in less than 3% on tablespace {#TBSNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -2039,7 +2039,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;52613349376 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;3298534883328 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&lt;10995116277760</expression>
-                            <name>Свободное пространство в tablespace {#TBSNAME} менее 49 Гб</name>
+                            <name>Free space in less than 49GB on tablespace {#TBSNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -2048,7 +2048,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;106300440576 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;10995116277760 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0</expression>
-                            <name>Свободное пространство в tablespace {#TBSNAME} менее 99 Гб</name>
+                            <name>Free space in less than 99GB on tablespace {#TBSNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>4</priority>
@@ -2057,7 +2057,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;106300440576 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;3298534883328 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&lt;10995116277760</expression>
-                            <name>Свободное пространство в tablespace {#TBSNAME} менее 99 Гб</name>
+                            <name>Free space in less than 99GB on tablespace {#TBSNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -2066,7 +2066,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                         </trigger_prototype>
                         <trigger_prototype>
                             <expression>{Application Oracle ODBC:db.odbc.select[tbs_freesize_{#TBSNAME},{$DSN1}].last()}&lt;213674622976 &amp; {Application Oracle ODBC:db.odbc.select[tbs_size_{#TBSNAME},{$DSN1}].last()}&gt;10995116277760 &amp; {Application Oracle ODBC:db.odbc.select[tbs_maxsize_{#TBSNAME},{$DSN1}].last()}&gt;0</expression>
-                            <name>Свободное пространство в tablespace {#TBSNAME} менее 199 Гб</name>
+                            <name>Free space in less than 199GB on tablespace {#TBSNAME}</name>
                             <url/>
                             <status>0</status>
                             <priority>3</priority>
@@ -2076,7 +2076,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
                     </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>Размер tablespace {#TBSNAME}</name>
+                            <name>Size of tablespace on {#TBSNAME}</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
@@ -2173,7 +2173,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
         </trigger>
         <trigger>
             <expression>{Application Oracle ODBC:db.odbc.select[uptime,{$DSN1}].last()}&lt;600</expression>
-            <name>БД Oracle сервера {HOSTNAME} была перезагружена!</name>
+            <name>Oracle database server {HOSTNAME} has just been restarted!</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
