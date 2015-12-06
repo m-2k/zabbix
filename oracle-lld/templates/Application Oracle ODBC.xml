@@ -1556,7 +1556,7 @@ where &#13;
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>oracle.odbc.discovery[{$DSN1},jobs]</key>
+                    <key>oracle.odbc.discovery[{$DSN1},{$ORA_USER},{$ORA_PASSWORD},jobs]</key>
                     <delay>86400</delay>
                     <status>0</status>
                     <allowed_hosts/>
@@ -1721,7 +1721,7 @@ WHERE &#13;
                     <type>10</type>
                     <snmp_community/>
                     <snmp_oid/>
-                    <key>oracle.odbc.discovery[{$DSN1},tablespaces]</key>
+                    <key>oracle.odbc.discovery[{$DSN1},{$ORA_USER},{$ORA_PASSWORD},tablespaces]</key>
                     <delay>86400</delay>
                     <status>0</status>
                     <allowed_hosts/>

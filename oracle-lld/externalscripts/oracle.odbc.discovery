@@ -1,13 +1,13 @@
 #!/usr/bin/php
 <?php
 
-  if(!isset($argv[1]) && !isset($argv[2])) exit("ZBX_NOTSUPPORTED");
+  if(!isset($argv[1]) && !isset($argv[2]) && !isset($argv[3]) && !isset($argv[4])) exit("ZBX_NOTSUPPORTED");
 
-  $connected_dsn = odbc_connect($argv[1],"","");
+  $connected_dsn = odbc_connect($argv[1],$argv[2],$argv[3]);
 
   if(!$connected_dsn) exit('SQL connection erorr | ZBX_NOTSUPPORTED');
 
-  switch ($argv[2]) {
+  switch ($argv[4]) {
       case "tablespaces":
           $result=odbc_exec($connected_dsn,"SELECT tablespace_name FROM dba_tablespaces;");
           $tablespaces = array("data"=>array());
