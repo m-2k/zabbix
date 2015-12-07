@@ -2153,7 +2153,7 @@ where a.tablespace_name = b.tablespace_name and a.tablespace_name='{#TBSNAME}'</
         </trigger>
         <trigger>
             <expression>{Application Oracle ODBC:db.odbc.select[live,{$DSN1}].nodata(400)}=1</expression>
-            <name>oracle monitoring, no data</name>
+            <name>No data retrieved from database</name>
             <url/>
             <status>0</status>
             <priority>4</priority>
